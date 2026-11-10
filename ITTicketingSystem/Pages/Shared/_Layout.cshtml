@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Northstar IT Help Desk</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ITTicketingSystem.styles.css" asp-append-version="true" />
+</head>
+<body class="@(ViewContext.RouteData.Values["page"]?.ToString() == "/Dashboard" ? "northstar-dashboard" : "")">
+
+    <div class="northstar-shell">
+
+        <aside class="northstar-sidebar" id="northstarSidebar">
+            <a class="northstar-brand" asp-page="/Index">
+                <img src="~/images/northstar-icon.png"
+                     alt="Northstar logo"
+                     class="northstar-logo"
+                     asp-append-version="true" />
+
+                <span class="northstar-brand-text">
+                    <strong>Northstar</strong>
+                    <small>IT HELP DESK</small>
+                </span>
+            </a>
+
+            <div class="northstar-sidebar-divider"></div>
+
+            @{
+                string currentPage =
+                    ViewContext.RouteData.Values["page"]?.ToString() ?? "";
+            }
+
+            <nav class="northstar-nav" aria-label="Main navigation">
+
+                <a asp-page="/Index"
+                   class="northstar-nav-link @(currentPage == "/Index" ? "active" : "")">
+                    <span>⌂</span> Home
+                </a>
+
+                <a asp-page="/Dashboard"
+                   class="northstar-nav-link @(currentPage == "/Dashboard" ? "active" : "")">
+                    <span>▦</span> Dashboard
+                </a>
+
+                <a asp-page="/Tickets"
+                   class="northstar-nav-link @(currentPage == "/Tickets" || currentPage == "/TicketDetails" ? "active" : "")">
+                    <span>▤</span> Support Tickets
+                </a>
+
+                <a asp-page="/TechnicianWorkload"
+                   class="northstar-nav-link @(currentPage == "/TechnicianWorkload" ? "active" : "")">
+                    <span>♙</span> Technician Workload
+                </a>
+
+                <a asp-page="/CreateTicket"
+                   class="northstar-nav-link @(currentPage == "/CreateTicket" ? "active" : "")">
+                    <span>＋</span> Create Ticket
+                </a>
+
+            </nav>
+
+            <div class="northstar-sidebar-bottom-group">
+
+                <a asp-page="/About"
+                   class="northstar-nav-link @(currentPage == "/About" ? "active" : "")">
+                    <span>ⓘ</span> About Northstar
+                </a>
+
+                <div class="northstar-sidebar-bottom">
+                    Northstar IT Help Desk<br />
+                    <small>Support Management System</small>
+                </div>
+
+            </div>
+        </aside>
+
+        <div class="northstar-content">
+            <header class="northstar-mobile-header">
+                <button type="button"
+                        class="northstar-menu-toggle"
+                        aria-label="Toggle navigation"
+                        aria-controls="northstarSidebar"
+                        aria-expanded="false">
+                    ☰
+                </button>
+
+                <span>Northstar IT Help Desk</span>
+            </header>
+
+            <button type="button"
+                    class="northstar-sidebar-overlay"
+                    aria-label="Close navigation"></button>
+            <main role="main" class="northstar-main">
+                @RenderBody()
+            </main>
+
+            <footer class="northstar-footer">
+                &copy; 2026 Northstar IT Help Desk
+            </footer>
+        </div>
+
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,159 @@
+﻿@page
+@model ITTicketingSystem.Pages.TechnicianWorkloadModel
+
+@{
+    ViewData["Title"] = "Technician Workload";
+}
+
+<div class="mb-4">
+    <h1>Technician Workload</h1>
+    <p class="text-muted">
+        Monitor technician assignments, support tiers,
+        and ticket workloads.
+    </p>
+</div>
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div class="alert alert-danger" role="alert">
+        @Model.ErrorMessage
+    </div>
+}
+else
+{
+    <div class="row g-3 mb-4">
+
+        <div class="col-md-3">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-muted">Total Technicians</h6>
+                    <h2>@Model.TotalTechnicians</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-muted">Active Technicians</h6>
+                    <h2>@Model.ActiveTechnicians</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-muted">Active Ticket Assignments</h6>
+                    <h2>@Model.TotalActiveTickets</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-muted">Support Tiers Represented</h6>
+                    <h2>@Model.SupportTiers</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card shadow-sm mb-4">
+
+        <div class="card-header">
+            <h5 class="mb-0">Technician Assignments</h5>
+        </div>
+
+        <div class="card-body">
+
+            @if (Model.Technicians.Count == 0)
+            {
+                <p class="text-muted mb-0">
+                    No technician records were found.
+                </p>
+            }
+            else
+            {
+                <div class="table-responsive">
+
+                    <table class="table table-hover align-middle">
+
+                        <thead>
+                            <tr>
+                                <th>Technician</th>
+                                <th>Support Tier</th>
+                                <th>Status</th>
+                                <th>Assigned</th>
+                                <th>Active Tickets</th>
+                                <th>Resolved</th>
+                                <th>Closed</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach (var technician in Model.Technicians)
+                            {
+                                <tr>
+                                    <td class="fw-semibold">
+                                        @technician.TechnicianName
+                                    </td>
+
+                                    <td>
+                                        Tier @technician.SupportTier
+                                    </td>
+
+                                    <td>
+                                        @if (technician.IsActive)
+                                        {
+                                            <span class="badge bg-success">
+                                                Active
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-secondary">
+                                                Inactive
+                                            </span>
+                                        }
+                                    </td>
+
+                                    <td>
+                                        @technician.TotalAssignedTickets
+                                    </td>
+
+                                    <td>
+                                        <span class="badge bg-primary">
+                                            @technician.ActiveTickets
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        @technician.ResolvedTickets
+                                    </td>
+
+                                    <td>
+                                        @technician.ClosedTickets
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+
+                    </table>
+
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+    <p class="text-muted small">
+        Workload information is retrieved from the
+        SQL Server technician reporting view.
+        Assignment totals may include tickets that are no
+        longer active.
+    </p>
+}

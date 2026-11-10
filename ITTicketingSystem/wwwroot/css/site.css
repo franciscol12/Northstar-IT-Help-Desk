@@ -1,0 +1,764 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+/* =========================================
+   NORTHSTAR IT HELP DESK
+   Midnight Tech Theme
+   ========================================= */
+
+:root {
+    --northstar-bg: #111827;
+    --northstar-panel: #334155;
+    --northstar-accent: #38BDF8;
+    --northstar-text: #F8FAFC;
+    --northstar-muted: #94A3B8;
+    --northstar-border: #475569;
+    --northstar-card: #1E293B;
+}
+
+/* NORTHSTAR MIDNIGHT TECH THEME */
+
+:root {
+    --bs-body-bg: #111827;
+    --bs-body-color: #F8FAFC;
+    --northstar-bg: #111827;
+    --northstar-panel: #334155;
+    --northstar-card: #1E293B;
+    --northstar-accent: #38BDF8;
+    --northstar-text: #F8FAFC;
+    --northstar-muted: #94A3B8;
+}
+
+html, body {
+    background-color: var(--northstar-bg);
+    color: var(--northstar-text);
+}
+
+.navbar, .footer {
+    background-color: #1E293B !important;
+    border-color: #334155 !important;
+}
+
+.navbar-brand, .nav-link, .footer {
+    color: var(--northstar-text) !important;
+}
+
+    .nav-link:hover, .navbar-brand:hover {
+        color: var(--northstar-accent) !important;
+    }
+
+.card {
+    background-color: var(--northstar-card);
+    color: var(--northstar-text);
+    border: 1px solid #334155;
+    border-radius: 12px;
+    box-shadow: none !important;
+}
+
+.card-header {
+    background-color: var(--northstar-panel);
+    color: var(--northstar-text);
+    border-color: #475569;
+}
+
+.table {
+    --bs-table-bg: #1E293B;
+    --bs-table-color: #F8FAFC;
+    --bs-table-border-color: #334155;
+    --bs-table-striped-bg: #263449;
+    --bs-table-striped-color: #F8FAFC;
+    --bs-table-hover-bg: #334155;
+    --bs-table-hover-color: #F8FAFC;
+}
+
+.form-control, .form-select {
+    background-color: #1E293B;
+    color: #F8FAFC;
+    border: 1px solid #475569;
+}
+
+    .form-control:focus, .form-select:focus {
+        background-color: #1E293B;
+        color: #F8FAFC;
+        border-color: #38BDF8;
+        box-shadow: 0 0 0 0.2rem rgba(56,189,248,0.2);
+    }
+
+    .form-control::placeholder {
+        color: #94A3B8;
+    }
+
+    .form-select option {
+        background-color: #1E293B;
+        color: #F8FAFC;
+    }
+
+.btn-primary {
+    background-color: #0284C7;
+    border-color: #0284C7;
+    color: white;
+}
+
+    .btn-primary:hover {
+        background-color: #0369A1;
+        border-color: #0369A1;
+    }
+
+.btn-outline-secondary {
+    color: #CBD5E1;
+    border-color: #64748B;
+}
+
+    .btn-outline-secondary:hover {
+        background-color: #334155;
+        color: white;
+    }
+
+.text-muted, .text-secondary {
+    color: #94A3B8 !important;
+}
+
+a {
+    color: #38BDF8;
+}
+
+    a:hover {
+        color: #7DD3FC;
+    }
+
+.alert-success {
+    background-color: #064E3B;
+    color: #D1FAE5;
+    border-color: #047857;
+}
+
+.alert-danger {
+    background-color: #7F1D1D;
+    color: #FEE2E2;
+    border-color: #B91C1C;
+}
+
+.alert-warning {
+    background-color: #78350F;
+    color: #FEF3C7;
+    border-color: #B45309;
+}
+
+.alert-info {
+    background-color: #164E63;
+    color: #CFFAFE;
+    border-color: #0891B2;
+}
+
+/* MIDNIGHT TECH - VISUAL FIXES */
+
+.card-header,
+.card-header h1,
+.card-header h2,
+.card-header h3,
+.card-header h4,
+.card-header h5 {
+    background-color: #334155 !important;
+    color: #F8FAFC !important;
+}
+
+.card-body,
+.card-body p,
+.card-body label,
+.card-body h1,
+.card-body h2,
+.card-body h3,
+.card-body h4,
+.card-body h5 {
+    color: #F8FAFC;
+}
+
+.card .text-muted,
+.card .text-secondary {
+    color: #94A3B8 !important;
+}
+
+.form-label {
+    color: #F8FAFC !important;
+}
+
+.card-footer {
+    background-color: #334155 !important;
+    color: #F8FAFC !important;
+    border-color: #475569 !important;
+}
+
+
+/* ========================================
+   NORTHSTAR SIDEBAR & DASHBOARD
+   ======================================== */
+
+/* Main application layout */
+
+.northstar-shell {
+    display: flex;
+    min-height: 100vh;
+    background: #111827;
+}
+
+/* Sidebar */
+
+.northstar-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    background: #1E293B;
+    border-right: 1px solid #334155;
+    padding: 28px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.northstar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #F8FAFC;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.35;
+    text-decoration: none;
+    padding: 8px;
+}
+
+    .northstar-brand:hover {
+        color: #F8FAFC;
+    }
+
+.northstar-brand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #334155;
+    color: #38BDF8;
+    font-size: 30px;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+}
+
+.northstar-sidebar-label {
+    color: #64748B;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding-left: 14px;
+}
+
+.northstar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.northstar-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #CBD5E1;
+    text-decoration: none;
+    padding: 14px 16px;
+    border-radius: 9px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+    .northstar-nav-link span {
+        font-size: 21px;
+        min-width: 24px;
+    }
+
+    .northstar-nav-link:hover {
+        background: #334155;
+        color: #38BDF8;
+    }
+
+.northstar-sidebar-bottom {
+    margin-top: auto;
+    border-top: 1px solid #334155;
+    padding: 20px 10px 0;
+    color: #94A3B8;
+    font-size: 12px;
+}
+
+    .northstar-sidebar-bottom small {
+        color: #64748B;
+    }
+
+/* Content */
+
+.northstar-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+
+.northstar-main {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 36px;
+    flex: 1;
+}
+
+.northstar-footer {
+    padding: 18px 36px;
+    color: #94A3B8;
+    font-size: 12px;
+    border-top: 1px solid #334155;
+}
+
+/* Dashboard cards */
+
+.northstar-dashboard main .card {
+    background: #1E293B;
+    border: 1px solid #334155;
+    border-top: 3px solid #38BDF8;
+    border-radius: 12px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+    .northstar-dashboard main .card:hover {
+        transform: translateY(-3px);
+        border-color: #38BDF8;
+    }
+
+    /* Dashboard headings and numerical values */
+
+    .northstar-dashboard main .card h2,
+    .northstar-dashboard main .card h3,
+    .northstar-dashboard main .card h4 {
+        color: #F8FAFC;
+        font-weight: 700;
+    }
+
+    .northstar-dashboard main .card .card-body {
+        padding: 22px;
+    }
+
+/* Improve spacing and headings throughout the app */
+
+.northstar-main h1 {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.northstar-main .card {
+    overflow: hidden;
+}
+
+/* Tablet and phone layout */
+
+@media (max-width: 768px) {
+    .northstar-shell {
+        flex-direction: column;
+    }
+
+    .northstar-sidebar {
+        width: 100%;
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .northstar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .northstar-nav-link {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .northstar-sidebar-bottom,
+    .northstar-sidebar-label {
+        display: none;
+    }
+
+    .northstar-main {
+        padding: 20px;
+    }
+
+    .northstar-footer {
+        padding: 16px 20px;
+    }
+}
+
+/* NORTHSTAR WELCOME PAGE */
+
+.northstar-home {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding-top: 35px;
+}
+
+.northstar-home-hero {
+    padding: 55px 45px;
+    border-radius: 18px;
+    border: 1px solid #334155;
+    background: linear-gradient(120deg, #1E293B, #111827);
+}
+
+.northstar-home-label {
+    color: #38BDF8;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.northstar-home-hero h1 {
+    color: #F8FAFC;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700;
+}
+
+.northstar-home-hero p {
+    color: #CBD5E1;
+    max-width: 100%;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.northstar-home-card {
+    border-radius: 14px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+    .northstar-home-card:hover {
+        transform: translateY(-4px);
+        border-color: #38BDF8;
+    }
+
+@media (max-width: 768px) {
+    .northstar-home-hero {
+        padding: 30px 24px;
+    }
+}
+
+/* ========================================
+   NORTHSTAR FOOTER POSITION FIX
+   ======================================== */
+
+/* Remove default page spacing and height issues */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+/* Make the application fill the browser window */
+.northstar-shell {
+    display: flex;
+    min-height: 100vh;
+    min-height: 100dvh;
+    align-items: stretch;
+}
+
+/* Keep main content and footer in a vertical layout */
+.northstar-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+
+/* Allow content to fill the available space */
+.northstar-main {
+    flex: 1 0 auto;
+}
+
+/* Keep footer at the bottom without making it sticky */
+.northstar-footer {
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
+/* NORTHSTAR SIDEBAR DIVIDER */
+
+.northstar-sidebar-divider {
+    height: 1px;
+    width: 100%;
+    background-color: #64748B;
+    opacity: 0.65;
+}
+
+/* NORTHSTAR FINAL LOGO */
+
+.northstar-logo {
+    width: 152px;
+    height: 152px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* NORTHSTAR LOGO AND BRAND ALIGNMENT */
+
+.northstar-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: 100%;
+    padding: 0 8px 12px;
+    text-align: center;
+}
+
+.northstar-logo {
+    width: 152px;
+    height: 152px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.northstar-brand-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+    .northstar-brand-text strong {
+        color: #F8FAFC;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+    }
+
+    .northstar-brand-text small {
+        color: #94A3B8;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+    }
+
+/* NORTHSTAR ACTIVE SIDEBAR NAVIGATION */
+
+.northstar-nav-link.active {
+    background-color: #334155;
+    color: #F8FAFC !important;
+    font-weight: 600;
+    border-left: 3px solid #38BDF8;
+}
+
+    .northstar-nav-link.active span {
+        color: #38BDF8;
+    }
+
+    .northstar-nav-link.active:hover {
+        background-color: #3B4B61;
+    }
+
+/* NORTHSTAR CLICKABLE DASHBOARD CARDS */
+
+.northstar-stat-link {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 12px;
+}
+
+    .northstar-stat-link:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .northstar-stat-link:focus-visible {
+        outline: 2px solid #38BDF8;
+        outline-offset: 4px;
+    }
+
+.northstar-stat-action {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #38BDF8;
+}
+
+.northstar-stat-link:hover .northstar-stat-action {
+    color: #7DD3FC;
+}
+
+/* KEEP ABOUT NORTHSTAR AT THE BOTTOM */
+
+.northstar-sidebar {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+.northstar-sidebar-bottom-group {
+    margin-top: auto !important;
+    width: 100%;
+}
+
+    .northstar-sidebar-bottom-group .northstar-sidebar-bottom {
+        margin-top: 12px;
+    }
+
+/* =========================================
+   NORTHSTAR COMPACT DESKTOP LAYOUT
+   ========================================= */
+
+@media (min-width: 992px) {
+
+    /* More balanced content width */
+    .northstar-main {
+        max-width: 1220px;
+        padding: 28px 30px;
+    }
+
+        /* Slightly smaller page headings */
+        .northstar-main h1 {
+            font-size: 2rem;
+        }
+
+        /* More compact dashboard and summary cards */
+        .northstar-main .card .card-body {
+            padding: 18px;
+        }
+
+    .northstar-dashboard .northstar-main .card .card-body {
+        padding: 18px;
+    }
+
+    /* Compact statistics */
+    .northstar-main .card h2 {
+        font-size: 1.65rem;
+    }
+
+    /* More compact tables */
+    .northstar-main .table {
+        font-size: 0.875rem;
+    }
+
+        .northstar-main .table th,
+        .northstar-main .table td {
+            padding: 9px 12px;
+        }
+
+    /* Better spacing between sections */
+    .northstar-main .mb-4 {
+        margin-bottom: 1.25rem !important;
+    }
+
+    /* Slightly smaller descriptions */
+    .northstar-main .text-muted {
+        font-size: 0.875rem;
+    }
+}
+
+/* MOBILE SIDEBAR NAVIGATION */
+
+.northstar-mobile-header,
+.northstar-sidebar-overlay {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .northstar-shell {
+        display: block;
+    }
+
+    .northstar-mobile-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 14px 18px;
+        background: #1E293B;
+        border-bottom: 1px solid #334155;
+        color: #F8FAFC;
+        font-weight: 600;
+    }
+
+    .northstar-menu-toggle {
+        background: transparent;
+        border: 1px solid #475569;
+        border-radius: 7px;
+        color: #38BDF8;
+        font-size: 24px;
+        padding: 2px 12px;
+        cursor: pointer;
+    }
+
+    .northstar-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 250px;
+        height: 100dvh;
+        min-height: 0;
+        z-index: 1051;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        transition: transform 0.25s ease;
+    }
+
+        .northstar-sidebar.mobile-open {
+            transform: translateX(0);
+        }
+
+    .northstar-sidebar-overlay.mobile-open {
+        display: block;
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        border: 0;
+        z-index: 1050;
+        cursor: pointer;
+    }
+
+    .northstar-sidebar .northstar-nav {
+        flex-direction: column;
+    }
+
+    .northstar-sidebar .northstar-nav-link {
+        font-size: 14px;
+        padding: 12px 16px;
+    }
+}

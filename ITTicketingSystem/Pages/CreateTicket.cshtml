@@ -1,0 +1,140 @@
+﻿@page
+@model ITTicketingSystem.Pages.CreateTicketModel
+
+@{
+    ViewData["Title"] = "Create Ticket";
+}
+
+<div class="container mt-4">
+
+    <div class="mb-4">
+        <h1>Create Support Ticket</h1>
+        <p class="text-muted">
+            Submit a new IT support request.
+        </p>
+    </div>
+
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <div class="alert alert-danger" role="alert">
+            @Model.ErrorMessage
+        </div>
+    }
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-white">
+            <h5 class="mb-0">New Ticket Information</h5>
+        </div>
+
+        <div class="card-body p-4">
+
+            <form method="post">
+
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Input.EmployeeID"
+                           class="form-label">
+                        Employee
+                    </label>
+
+                    <select asp-for="Input.EmployeeID"
+                            asp-items="Model.Employees"
+                            class="form-select">
+                        <option value="0">
+                            -- Select Employee --
+                        </option>
+                    </select>
+
+                    <span asp-validation-for="Input.EmployeeID"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Input.CategoryID"
+                           class="form-label">
+                        Issue Category
+                    </label>
+
+                    <select asp-for="Input.CategoryID"
+                            asp-items="Model.Categories"
+                            class="form-select">
+                        <option value="0">
+                            -- Select Category --
+                        </option>
+                    </select>
+
+                    <span asp-validation-for="Input.CategoryID"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Input.Title"
+                           class="form-label">
+                        Ticket Title
+                    </label>
+
+                    <input asp-for="Input.Title"
+                           class="form-control"
+                           placeholder="Brief description of the issue" />
+
+                    <span asp-validation-for="Input.Title"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Input.Description"
+                           class="form-label">
+                        Description
+                    </label>
+
+                    <textarea asp-for="Input.Description"
+                              class="form-control"
+                              rows="5"
+                              placeholder="Describe the problem and any troubleshooting already attempted."></textarea>
+
+                    <span asp-validation-for="Input.Description"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="Input.Priority"
+                           class="form-label">
+                        Priority
+                    </label>
+
+                    <select asp-for="Input.Priority"
+                            class="form-select">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                        <option value="Critical">Critical</option>
+                    </select>
+
+                    <span asp-validation-for="Input.Priority"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit"
+                            class="btn btn-primary">
+                        Submit Ticket
+                    </button>
+
+                    <a asp-page="/Tickets"
+                       class="btn btn-outline-secondary">
+                        Cancel
+                    </a>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

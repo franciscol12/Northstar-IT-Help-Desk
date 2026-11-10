@@ -1,0 +1,114 @@
+﻿@page
+@model ITTicketingSystem.Pages.DashboardModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container mt-4">
+
+    <div class="mb-4">
+        <h1>Support Dashboard</h1>
+        <p class="text-muted">
+            Monitor ticket activity, track support requests,
+            and view current help desk performance.
+        </p>
+    </div>
+
+    @if (Model.ConnectionStatus == "Connected successfully!")
+    {
+        <div class="row g-3">
+
+            <div class="col-md-4">
+                <a asp-page="/Tickets"
+                   class="northstar-stat-link">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Tickets</h5>
+                            <h2>@Model.TotalTickets</h2>
+                            <span class="northstar-stat-action">View all tickets →</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4">
+                <a asp-page="/Tickets"
+                   asp-route-status="Open"
+                   class="northstar-stat-link">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Open</h5>
+                            <h2>@Model.OpenTickets</h2>
+                            <span class="northstar-stat-action">View open tickets →</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4">
+                <a asp-page="/Tickets"
+                   asp-route-status="In Progress"
+                   class="northstar-stat-link">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">In Progress</h5>
+                            <h2>@Model.InProgressTickets</h2>
+                            <span class="northstar-stat-action">View in-progress tickets →</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4">
+                <a asp-page="/Tickets"
+                   asp-route-status="Escalated"
+                   class="northstar-stat-link">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Escalated</h5>
+                            <h2>@Model.EscalatedTickets</h2>
+                            <span class="northstar-stat-action">View escalated tickets →</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4">
+                <a asp-page="/Tickets"
+                   asp-route-status="Resolved"
+                   class="northstar-stat-link">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Resolved</h5>
+                            <h2>@Model.ResolvedTickets</h2>
+                            <span class="northstar-stat-action">View resolved tickets →</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4">
+                <a asp-page="/Tickets"
+                   asp-route-status="Closed"
+                   class="northstar-stat-link">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Closed</h5>
+                            <h2>@Model.ClosedTickets</h2>
+                            <span class="northstar-stat-action">View closed tickets →</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            @Model.ConnectionStatus
+        </div>
+    }
+
+</div>

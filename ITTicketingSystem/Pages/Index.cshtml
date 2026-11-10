@@ -1,0 +1,69 @@
+﻿@page
+@model IndexModel
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="northstar-home">
+
+    <div class="northstar-home-hero">
+        <div class="northstar-home-label">
+            ✦ IT SUPPORT PORTAL
+        </div>
+
+        <h1>Welcome to Northstar</h1>
+
+        <p>
+            Your central hub for submitting IT support requests,
+            tracking technical issues, and managing help desk activity.
+        </p>
+
+        <a asp-page="/CreateTicket"
+           class="btn btn-primary btn-lg mt-3">
+            + Create Support Ticket
+        </a>
+    </div>
+
+    <h4 class="mt-5 mb-3">Quick Access</h4>
+
+    <div class="row g-4">
+
+        <div class="col-md-6">
+            <div class="card h-100 northstar-home-card">
+                <div class="card-body p-4">
+                    <h5>Support Tickets</h5>
+
+                    <p class="text-muted">
+                        View existing requests, filter tickets,
+                        and manage support activity.
+                    </p>
+
+                    <a asp-page="/Tickets"
+                       class="btn btn-outline-info">
+                        View Support Tickets
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100 northstar-home-card">
+                <div class="card-body p-4">
+                    <h5>Dashboard</h5>
+
+                    <p class="text-muted">
+                        Monitor ticket volumes, current statuses,
+                        and overall help desk activity.
+                    </p>
+
+                    <a asp-page="/Dashboard"
+                       class="btn btn-outline-info">
+                        Open Dashboard
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
