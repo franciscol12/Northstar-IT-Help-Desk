@@ -64,4 +64,28 @@ A complete test scenario involving Ticket #1003 demonstrated the progression of 
 
 ## Development Environment and Limitations
 
-The prototype was developed and tested
+The prototype was developed and tested using a WSU-hosted Microsoft SQL Server database that requires authorized university access.
+
+The repository contains the ASP.NET Core application source code with placeholder database connection settings. The original WSU database connection is not included.
+
+To run the database-dependent functionality, a developer would need access to a compatible SQL Server database containing the required tables, stored procedures, views, and test records, along with an appropriately configured connection string.
+
+This is an academic prototype rather than a production-ready help desk platform. Additional development would be needed for production deployment, including user authentication, role-based access controls, and independent hosting.
+
+## Project Documentation
+
+Additional project documentation includes:
+
+- Industry Research & System Requirements
+- Technical Documentation & System Demonstration
+- Entity Relationship Diagram (ERD)
+- Ticket Lifecycle Flowchart
+- System Architecture Diagram
+- Website screenshots and functional testing evidence
+
+## Author
+
+**Francisco Ledesma**  
+Management Information Systems  
+Washington State University  
+November 2026
