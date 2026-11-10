@@ -44,6 +44,18 @@ The database consists of five interconnected tables:
 
 The backend also includes seven stored procedures for ticket management and four reporting views.
 
+### SQL Database Source
+
+The database schema and SQL logic are included in the `Database` folder.
+
+**File:** `Database/Northstar_HelpDesk_Database.sql`
+
+This script contains the exported definitions for five relational tables, seven stored procedures, four reporting views, and associated database constraints.
+
+The SQL script was generated from the completed Northstar prototype using SQL Server Management Studio (SSMS). It contains schema definitions rather than actual employee or support ticket records.
+
+The script is provided as technical documentation of the database implementation. It has not been independently tested as a standalone database installation script.
+
 ## System Testing
 
 The prototype was evaluated using simulated IT support scenarios. Testing included ticket creation, technician assignment, troubleshooting documentation, escalation, resolution, closure, and validation of selected invalid operations.
